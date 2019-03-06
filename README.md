@@ -1,3 +1,5 @@
+![nginx 1.15.x](https://img.shields.io/badge/nginx-1.15.x-green.svg)
+![nginx 1.14.x](https://img.shields.io/badge/nginx-1.14.x-green.svg)
 ![nginx 1.13.x](https://img.shields.io/badge/nginx-1.13.x-green.svg)
 ![nginx 1.12.x](https://img.shields.io/badge/nginx-1.12.x-green.svg)
 
@@ -11,7 +13,11 @@ It currently provides versions 1.12.x 1.13.x
 
 ## Supported tags and respective Dockerfiles
 
-`1.13.12`, `1.13`, `latest` _([1.13.12/Dockerfile](https://github.com/gearboxworks/proxy-docker/blob/master/1.13.12/Dockerfile))_
+`1.15.9`, `1.15`, `latest` _([1.15.9/Dockerfile](https://github.com/gearboxworks/proxy-docker/blob/master/1.15.9/Dockerfile))_
+
+`1.14.2, `1.14`` _([1.14.2/Dockerfile](https://github.com/gearboxworks/proxy-docker/blob/master/1.14.2/Dockerfile))_
+
+`1.13.12`, `1.13` _([1.13.12/Dockerfile](https://github.com/gearboxworks/proxy-docker/blob/master/1.13.12/Dockerfile))_
 
 `1.12.2, `1.12`` _([1.12.2/Dockerfile](https://github.com/gearboxworks/proxy-docker/blob/master/1.12.2/Dockerfile))_
 
