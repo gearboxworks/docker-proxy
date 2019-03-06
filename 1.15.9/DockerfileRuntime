@@ -10,20 +10,19 @@ FROM nginx:1.15.9-alpine
 COPY --from=0 /build /build
 
 # 4. Run the build-base.sh script to set everything up.
-RUN /bin/sh -x /build/build-base.sh
+RUN /bin/sh /build/build-base.sh
 
 # 5. Now copy the local files specific to the nginx:1.15.0-alpine container.
 COPY build /build
 COPY container.json /build/container.json
 
 # 6. Set up env variables.
-ARG GEARBOX_CONTAINER_NAME="docker-proxy"
-ARG GEARBOX_CONTAINER_VERSION="1.15.9"
-ENV GEARBOX_CONTAINER_NAME $GEARBOX_CONTAINER_NAME
-ENV GEARBOX_CONTAINER_VERSION $GEARBOX_CONTAINER_VERSION
+MAINTAINER Gearbox Team <team@gearbox.works>
+ENV GEARBOX_CONTAINER_NAME "docker-proxy"
+ENV GEARBOX_CONTAINER_VERSION "1.15.9"
 
 # 7. Run the build-proxy.sh script to set everything up.
-RUN /bin/sh -x /build/build-proxy.sh
+RUN /bin/sh /build/build-proxy.sh
 
 # 8. Expose ports.
 EXPOSE 80 443 9970
