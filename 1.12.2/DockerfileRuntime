@@ -1,11 +1,11 @@
-ARG VERSION="1.12.2"
-
 # This image doesn't use Alpine as the base, so we are going to reference the gearbox-base container indirectly.
+ARG VERSION="1.12.2"
 
 # 1. First reference the gearbox-base image.
 FROM gearboxworks/gearbox-base:alpine-3.5 as gearbox-base
 
 # 2. Next reference the third party image.
+ARG VERSION="1.12.2"
 FROM nginx:$VERSION-alpine
 
 # 3. Copy the build directory over from gearbox-base image.
@@ -13,7 +13,7 @@ COPY --from=gearbox-base /build /build
 
 # 4. Now copy the local files specific to this container.
 COPY build /build
-COPY container.json /build/container.json
+COPY gearbox.json /build/gearbox.json
 
 # 5. Set up env variables.
 MAINTAINER Gearbox Team <team@gearbox.works>

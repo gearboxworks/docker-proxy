@@ -1,4 +1,5 @@
 {
+	"state": "production",
 	"organization": "gearboxworks",
 	"name": "proxy",
 	"version": "1.14.2",

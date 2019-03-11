@@ -1,9 +1,10 @@
 {
+	"state": "production",
 	"organization": "gearboxworks",
 	"name": "proxy",
-	"version": "1.12.2",
-	"majorversion": "1.12",
-	"latest": "",
+	"version": "1.15.9",
+	"majorversion": "1.15",
+	"latest": "1",
 	"class": "proxy",
 	"network": "--network gearboxnet",
 	"ports": "-p 80:80 -p 443:443",
