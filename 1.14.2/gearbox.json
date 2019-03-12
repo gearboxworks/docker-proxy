@@ -10,7 +10,7 @@
 	"ports": "-p 80:80 -p 443:443",
 	"volumes": "-v /srv/sites:/srv/sites",
 	"restart": "--restart unless-stopped",
-	"args": "--add-host 'mailhog:172.42.0.1'",
+	"args": "--add-host mailhog:172.42.0.1",
 	"env": "PROXY_VERSION"
 }
 
