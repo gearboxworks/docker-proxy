@@ -22,4 +22,6 @@ then
 	mkdir -p /usr/local/bin; checkExit
 fi
 
+chown -fhR gearbox:gearbox /var/cache/nginx /var/log/nginx /etc/nginx /usr/lib/nginx /usr/sbin/nginx /usr/share/nginx
+
 c_ok "Finished."
