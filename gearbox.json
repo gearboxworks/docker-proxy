@@ -1,7 +1,7 @@
 {
 	"state": "production",
 	"organization": "gearboxworks",
-	"name": "nginx",
+	"name": "proxy",
 	"maintainer": "Gearbox Team <team@gearbox.works>",
 	"class": "webserver",
 	"network": "--network gearboxnet",

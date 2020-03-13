@@ -2,8 +2,8 @@
 
 ################################################################################
 # WARNING: This file has been auto-generated. DO NOT EDIT: WARNING
-# Created on 2020-03-14T03:15:19+1100, using template:DockerfileRuntime.tmpl and json:gearbox.json
-# Referenced Docker container for docker-nginx based off gearboxworks/gearbox-base:alpine-3.9 with nginx:1.15.9-alpine overlayed.
+# Created on 2020-03-14T03:27:44+1100, using template:DockerfileRuntime.tmpl and json:gearbox.json
+# Referenced Docker container for docker-proxy based off gearboxworks/gearbox-base:alpine-3.9 with nginx:1.15.9-alpine overlayed.
 
 ARG VERSION=1.15.9
 
@@ -22,11 +22,11 @@ COPY --from=gearbox-base /etc/gearbox /etc/gearbox
 
 # 4. Set up env variables.
 MAINTAINER Gearbox Team <team@gearbox.works>
-ENV GEARBOX_CONTAINER_NAME "docker-nginx"
+ENV GEARBOX_CONTAINER_NAME "docker-proxy"
 ENV GEARBOX_CONTAINER_VERSION ${VERSION}
 ENV GEARBOX_ENTRYPOINT ${GEARBOX_ENTRYPOINT}
 ENV GEARBOX_ENTRYPOINT_ARGS ${GEARBOX_ENTRYPOINT_ARGS}
-LABEL gearbox.json='{"state": "production","organization": "gearboxworks","name": "nginx","maintainer": "Gearbox Team <team@gearbox.works>","class": "webserver","network": "--network gearboxnet","ports": ["80","443"],"volumes": "","restart": "--restart no","run": "/usr/sbin/nginx","args": "","env": {},"versions": {"1.15.9": {"majorversion": "1.15","latest": true,"ref": "nginx:1.15.9-alpine","base": "gearboxworks/gearbox-base:alpine-3.9"},"1.14.2": {"majorversion": "1.14","latest": false,"ref": "nginx:1.14.2-alpine","base": "gearboxworks/gearbox-base:alpine-3.8"},"1.13.12": {"majorversion": "1.13","latest": false,"ref": "nginx:1.13.12-alpine","base": "gearboxworks/gearbox-base:alpine-3.7"},"1.12.2": {"majorversion": "1.12","latest": false,"ref": "nginx:1.12.2-alpine","base": "gearboxworks/gearbox-base:alpine-3.5"}}}'
+LABEL gearbox.json='{"state": "production","organization": "gearboxworks","name": "proxy","maintainer": "Gearbox Team <team@gearbox.works>","class": "webserver","network": "--network gearboxnet","ports": ["80","443"],"volumes": "","restart": "--restart no","run": "/usr/sbin/nginx","args": "","env": {},"versions": {"1.15.9": {"majorversion": "1.15","latest": true,"ref": "nginx:1.15.9-alpine","base": "gearboxworks/gearbox-base:alpine-3.9"},"1.14.2": {"majorversion": "1.14","latest": false,"ref": "nginx:1.14.2-alpine","base": "gearboxworks/gearbox-base:alpine-3.8"},"1.13.12": {"majorversion": "1.13","latest": false,"ref": "nginx:1.13.12-alpine","base": "gearboxworks/gearbox-base:alpine-3.7"},"1.12.2": {"majorversion": "1.12","latest": false,"ref": "nginx:1.12.2-alpine","base": "gearboxworks/gearbox-base:alpine-3.5"}}}'
 LABEL gearbox.version='1.15.9'
 ENV GEARBOX_VERSION "1.15.9"
 LABEL container.args=""
@@ -36,8 +36,8 @@ ENV GEARBOX_CLASS "webserver"
 # SKIP env
 LABEL container.maintainer="Gearbox Team <team@gearbox.works>"
 ENV GEARBOX_MAINTAINER "Gearbox Team <team@gearbox.works>"
-LABEL container.name="nginx"
-ENV GEARBOX_NAME "nginx"
+LABEL container.name="proxy"
+ENV GEARBOX_NAME "proxy"
 LABEL container.network="--network gearboxnet"
 ENV GEARBOX_NETWORK "--network gearboxnet"
 LABEL container.organization="gearboxworks"
@@ -73,8 +73,8 @@ COPY ${VERSION}/gearbox.json /etc/gearbox/gearbox.json
 # 6. Run the base.sh script to set everything up.
 RUN /bin/sh /etc/gearbox/build/base.sh
 
-# 7. Run the nginx.sh script to set everything up.
-RUN /bin/sh /etc/gearbox/build/nginx.sh
+# 7. Run the proxy.sh script to set everything up.
+RUN /bin/sh /etc/gearbox/build/proxy.sh
 
 # 8. Expose ports.
 EXPOSE 22 9970 80 443 
