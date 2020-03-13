@@ -1,105 +1,100 @@
-![nginx 1.15.x](https://img.shields.io/badge/nginx-1.15.x-green.svg)
-![nginx 1.14.x](https://img.shields.io/badge/nginx-1.14.x-green.svg)
-![nginx 1.13.x](https://img.shields.io/badge/nginx-1.13.x-green.svg)
-![nginx 1.12.x](https://img.shields.io/badge/nginx-1.12.x-green.svg)
-
 ![Gearbox](https://github.com/gearboxworks/gearbox.github.io/raw/master/Gearbox-100x.png)
 
 
-# nginx proxy Docker Container for Gearbox
-This is the repository for the [proxy-docker](https://nginx.org/en/) Docker container implemented for [Gearbox](https://github.com/gearboxworks/gearbox).
-It currently provides versions 1.12.x 1.13.x
+# Another [Gearbox](https://github.com/gearboxworks/) Docker container service - nginx
+This is the repository for the [nginx](<no value>) Docker container implemented for [Gearbox](https://github.com/gearboxworks/).
 
 
-## Supported tags and respective Dockerfiles
+## Repository Info
+GitHub commit: ![commit-date](https://img.shields.io/github/last-commit/gearboxworks/docker-nginx?style=flat-square)
 
-`1.15.9`, `1.15`, `latest` _([1.15.9/Dockerfile](https://github.com/gearboxworks/proxy-docker/blob/master/1.15.9/Dockerfile))_
+GitHub release(latest): ![last-release-date](https://img.shields.io/github/release-date/gearboxworks/docker-nginx) ![last-release-date](https://img.shields.io/github/v/tag/gearboxworks/docker-nginx?sort=semver) [![release-state](https://github.com/gearboxworks/docker-nginx/workflows/release/badge.svg?event=release)](https://github.com/gearboxworks/docker-nginx/actions?query=workflow%3Arelease)
 
-`1.14.2, `1.14`` _([1.14.2/Dockerfile](https://github.com/gearboxworks/proxy-docker/blob/master/1.14.2/Dockerfile))_
 
-`1.13.12`, `1.13` _([1.13.12/Dockerfile](https://github.com/gearboxworks/proxy-docker/blob/master/1.13.12/Dockerfile))_
+## Supported versions and respective Dockerfiles
+| Service | GitHub Version | Docker Version | Docker Size | Docker Tags | Dockerfile |
+| ------- | -------------- | -------------- | ----------- | ----------- | ---------- |
+| nginx | ![nginx](https://img.shields.io/badge/nginx-1.12.2-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/nginx/1.12.2) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/nginx/1.12.2) | `1.12.2`, `1.12` | _([1.12.2/DockerfileRuntime](https://github.com/gearboxworks/docker-nginx/blob/master/1.12/DockerfileRuntime))_ |
+| nginx | ![nginx](https://img.shields.io/badge/nginx-1.13.12-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/nginx/1.13.12) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/nginx/1.13.12) | `1.13.12`, `1.13` | _([1.13.12/DockerfileRuntime](https://github.com/gearboxworks/docker-nginx/blob/master/1.13/DockerfileRuntime))_ |
+| nginx | ![nginx](https://img.shields.io/badge/nginx-1.14.2-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/nginx/1.14.2) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/nginx/1.14.2) | `1.14.2`, `1.14` | _([1.14.2/DockerfileRuntime](https://github.com/gearboxworks/docker-nginx/blob/master/1.14/DockerfileRuntime))_ |
+| nginx | ![nginx](https://img.shields.io/badge/nginx-1.15.9-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/nginx/1.15.9) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/nginx/1.15.9) | `1.15.9`, `1.15`, `latest` | _([1.15.9/DockerfileRuntime](https://github.com/gearboxworks/docker-nginx/blob/master/1.15/DockerfileRuntime))_ |
 
-`1.12.2, `1.12`` _([1.12.2/Dockerfile](https://github.com/gearboxworks/proxy-docker/blob/master/1.12.2/Dockerfile))_
 
 
 ## Using this container.
-If you want to use this container as part of Gearbox, then use the Docker Hub method.
-Or you can use the GitHub method to build and run the container.
+This container has been designed to work within the [Gearbox](https://github.com/gearboxworks/)
+framework.
+However, due to the flexability of Gearbox, it can be used outside of this framework.
+You can either use it directly from DockerHub or GitHub.
 
 
-## Using it from Docker Hub
-
-### Links
-(Docker Hub repo)[https://hub.docker.com/r/gearbox/proxy/]
-
-(Docker Cloud repo)[https://cloud.docker.com/swarm/gearbox/repository/docker/gearbox/proxy/]
-
-
-### Setup from Docker Hub
-A simple `docker pull gearbox/proxy` will pull down the latest version.
-
-
-### Runtime from Docker Hub
-start - Spin up a Docker container with the correct runtime configs.
-
-`docker run -d --name proxy-1.13.12 --restart unless-stopped --network gearboxnet -p 80:80 -v $PROJECT_ROOT:/project --mount type=bind,source=/srv/sites,target=/srv/sites gearbox/proxy:1.13.12`
-
-stop - Stop a Docker container.
-
-`docker stop proxy-1.13.12`
-
-run - Run a Docker container in the foreground, (all STDOUT and STDERR will go to console). The Container be removed on termination.
-
-`docker run --rm --name proxy-1.13.12 --network gearboxnet -p 80:80 -v $PROJECT_ROOT:/project --mount type=bind,source=/srv/sites,target=/srv/sites gearbox/proxy:1.13.12`
-
-shell - Run a shell, (/bin/bash), within a Docker container.
-
-`docker run --rm --name proxy-1.13.12 -i -t --network gearboxnet -p 80:80 -v $PROJECT_ROOT:/project --mount type=bind,source=/srv/sites,target=/srv/sites gearbox/proxy:1.13.12 /bin/bash`
-
-rm - Remove the Docker container.
-
-`docker container rm proxy-1.13.12`
-
-
-## Using it from GitHub repo
+## Method 1: GitHub repo
 
 ### Setup from GitHub repo
 Simply clone this repository to your local machine
 
-`git clone https://github.com/gearboxworks/proxy-docker.git`
-
+`git clone https://github.com/gearboxworks/nginx-docker.git`
 
 ### Building from GitHub repo
 `make build` - Build Docker images. Build all versions from the base directory or specific versions from each directory.
 
-
 `make list` - List already built Docker images. List all versions from the base directory or specific versions from each directory.
-
 
 `make clean` - Remove already built Docker images. Remove all versions from the base directory or specific versions from each directory.
 
-
 `make push` - Push already built Docker images to Docker Hub, (only for Gearbox admins). Push all versions from the base directory or specific versions from each directory.
-
 
 ### Runtime from GitHub repo
 When you `cd` into a version directory you can also perform a few more actions.
 
 `make start` - Spin up a Docker container with the correct runtime configs.
 
-
 `make stop` - Stop a Docker container.
-
 
 `make run` - Run a Docker container in the foreground, (all STDOUT and STDERR will go to console). The Container be removed on termination.
 
-
 `make shell` - Run a shell, (/bin/bash), within a Docker container.
-
 
 `make rm` - Remove the Docker container.
 
-
 `make test` - Will issue a `stop`, `rm`, `clean`, `build`, `create` and `start` on a Docker container.
 
+
+## Method 2: Docker Hub
+
+### Setup from Docker Hub
+A simple `docker pull gearbox/nginx` will pull down the latest version.
+
+### Starting
+start - Spin up a Docker container with the correct runtime configs.
+
+`docker run -d --name nginx-latest --restart unless-stopped --network gearboxnet gearbox/nginx:latest`
+
+### Stopping
+stop - Stop a Docker container.
+
+`docker stop nginx-latest`
+
+### Remove container
+rm - Remove the Docker container.
+
+`docker container rm nginx-latest`
+
+### Run in foreground
+run - Run a Docker container in the foreground, (all STDOUT and STDERR will go to console). The Container be removed on termination.
+
+`docker run --rm --name nginx-latest --network gearboxnet gearbox/nginx:latest`
+
+### Run a shell
+shell - Run a shell, (/bin/bash), within a Docker container.
+
+`docker run --rm --name nginx-latest -i -t --network gearboxnet gearbox/nginx:latest /bin/bash`
+
+### SSH
+ssh - All [Gearbox](https://github.com/gearboxworks/) containers have a running SSH daemon. So you can connect remotely.
+
+```
+SSH_PORT="$(docker port nginx-latest 22/tcp | sed 's/0.0.0.0://')"
+ssh -p ${SSH_PORT} -o StrictHostKeyChecking=no gearbox@localhost
+```
 

@@ -1,31 +1,88 @@
-# This image doesn't use Alpine as the base, so we are going to reference the gearbox-base container indirectly.
-ARG VERSION="1.14.2"
+
+
+################################################################################
+# WARNING: This file has been auto-generated. DO NOT EDIT: WARNING
+# Created on 2020-03-14T03:15:19+1100, using template:DockerfileRuntime.tmpl and json:gearbox.json
+# Referenced Docker container for docker-nginx based off gearboxworks/gearbox-base:alpine-3.8 with nginx:1.14.2-alpine overlayed.
+
+ARG VERSION=1.14.2
 
 # 1. First reference the gearbox-base image.
 FROM gearboxworks/gearbox-base:alpine-3.8 as gearbox-base
 
 # 2. Next reference the third party image.
-ARG VERSION="1.14.2"
-FROM nginx:$VERSION-alpine
+FROM nginx:1.14.2-alpine
+ARG VERSION
+ARG GEARBOX_ENTRYPOINT
+ARG GEARBOX_ENTRYPOINT_ARGS
+USER root
 
 # 3. Copy the build directory over from gearbox-base image.
-COPY --from=gearbox-base /build /build
+COPY --from=gearbox-base /etc/gearbox /etc/gearbox
 
-# 4. Now copy the local files specific to this container.
-COPY build /build
-COPY gearbox.json /build/gearbox.json
-
-# 5. Set up env variables.
+# 4. Set up env variables.
 MAINTAINER Gearbox Team <team@gearbox.works>
-ENV GEARBOX_CONTAINER_NAME "docker-proxy"
-ENV GEARBOX_CONTAINER_VERSION $VERSION
+ENV GEARBOX_CONTAINER_NAME "docker-nginx"
+ENV GEARBOX_CONTAINER_VERSION ${VERSION}
+ENV GEARBOX_ENTRYPOINT ${GEARBOX_ENTRYPOINT}
+ENV GEARBOX_ENTRYPOINT_ARGS ${GEARBOX_ENTRYPOINT_ARGS}
+LABEL gearbox.json='{"state": "production","organization": "gearboxworks","name": "nginx","maintainer": "Gearbox Team <team@gearbox.works>","class": "webserver","network": "--network gearboxnet","ports": ["80","443"],"volumes": "","restart": "--restart no","run": "/usr/sbin/nginx","args": "","env": {},"versions": {"1.15.9": {"majorversion": "1.15","latest": true,"ref": "nginx:1.15.9-alpine","base": "gearboxworks/gearbox-base:alpine-3.9"},"1.14.2": {"majorversion": "1.14","latest": false,"ref": "nginx:1.14.2-alpine","base": "gearboxworks/gearbox-base:alpine-3.8"},"1.13.12": {"majorversion": "1.13","latest": false,"ref": "nginx:1.13.12-alpine","base": "gearboxworks/gearbox-base:alpine-3.7"},"1.12.2": {"majorversion": "1.12","latest": false,"ref": "nginx:1.12.2-alpine","base": "gearboxworks/gearbox-base:alpine-3.5"}}}'
+LABEL gearbox.version='1.14.2'
+ENV GEARBOX_VERSION "1.14.2"
+LABEL container.args=""
+ENV GEARBOX_ARGS ""
+LABEL container.class="webserver"
+ENV GEARBOX_CLASS "webserver"
+# SKIP env
+LABEL container.maintainer="Gearbox Team <team@gearbox.works>"
+ENV GEARBOX_MAINTAINER "Gearbox Team <team@gearbox.works>"
+LABEL container.name="nginx"
+ENV GEARBOX_NAME "nginx"
+LABEL container.network="--network gearboxnet"
+ENV GEARBOX_NETWORK "--network gearboxnet"
+LABEL container.organization="gearboxworks"
+ENV GEARBOX_ORGANIZATION "gearboxworks"
+LABEL container.ports="[80 443]"
+ENV GEARBOX_PORTS "[80 443]"
+LABEL container.restart="--restart no"
+ENV GEARBOX_RESTART "--restart no"
+LABEL container.run="/usr/sbin/nginx"
+ENV GEARBOX_RUN "/usr/sbin/nginx"
+LABEL container.state="production"
+ENV GEARBOX_STATE "production"
+# SKIP versions
+LABEL container.volumes=""
+ENV GEARBOX_VOLUMES ""
 
-# 6. Run the build-base.sh script to set everything up.
-RUN /bin/sh /build/build-base.sh
+LABEL container.base="gearboxworks/gearbox-base:alpine-3.8"
+ENV GEARBOX_BASE "gearboxworks/gearbox-base:alpine-3.8"
+LABEL container.latest="false"
+ENV GEARBOX_LATEST "false"
+LABEL container.majorversion="1.14"
+ENV GEARBOX_MAJORVERSION "1.14"
+LABEL container.ref="nginx:1.14.2-alpine"
+ENV GEARBOX_REF "nginx:1.14.2-alpine"
 
-# 7. Run the build-proxy.sh script to set everything up.
-RUN /bin/sh /build/build-proxy.sh
+
+
+# 5. Now copy the local files specific to this container.
+COPY build /etc/gearbox
+COPY ${VERSION}/build /etc/gearbox
+COPY ${VERSION}/gearbox.json /etc/gearbox/gearbox.json
+
+# 6. Run the base.sh script to set everything up.
+RUN /bin/sh /etc/gearbox/build/base.sh
+
+# 7. Run the nginx.sh script to set everything up.
+RUN /bin/sh /etc/gearbox/build/nginx.sh
 
 # 8. Expose ports.
-EXPOSE 80 443 9970
+EXPOSE 22 9970 80 443 
+WORKDIR /home/gearbox/projects
+
+CMD ["/init"]
+
+# END
+################################################################################
+
 

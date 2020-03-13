@@ -1,16 +1,45 @@
 {
 	"state": "production",
 	"organization": "gearboxworks",
-	"name": "proxy",
-	"version": "1.15.9",
-	"majorversion": "1.15",
-	"latest": "1",
-	"class": "proxy",
+	"name": "nginx",
+	"maintainer": "Gearbox Team <team@gearbox.works>",
+	"class": "webserver",
 	"network": "--network gearboxnet",
-	"ports": "-p 80:80 -p 443:443",
-	"volumes": "-v /srv/sites:/srv/sites",
-	"restart": "--restart unless-stopped",
-	"args": "--add-host mailhog:172.42.0.1",
-	"env": "PROXY_VERSION"
+	"ports": [
+		"80",
+		"443"
+	],
+	"volumes": "",
+	"restart": "--restart no",
+	"run": "/usr/sbin/nginx",
+	"args": "",
+	"env": {
+	},
+	"versions": {
+		"1.15.9": {
+			"majorversion": "1.15",
+			"latest": true,
+			"ref": "nginx:1.15.9-alpine",
+			"base": "gearboxworks/gearbox-base:alpine-3.9"
+		},
+		"1.14.2": {
+			"majorversion": "1.14",
+			"latest": false,
+			"ref": "nginx:1.14.2-alpine",
+			"base": "gearboxworks/gearbox-base:alpine-3.8"
+		},
+		"1.13.12": {
+			"majorversion": "1.13",
+			"latest": false,
+			"ref": "nginx:1.13.12-alpine",
+			"base": "gearboxworks/gearbox-base:alpine-3.7"
+		},
+		"1.12.2": {
+			"majorversion": "1.12",
+			"latest": false,
+			"ref": "nginx:1.12.2-alpine",
+			"base": "gearboxworks/gearbox-base:alpine-3.5"
+		}
+	}
 }
 
