@@ -1,8 +1,8 @@
-![Gearbox](https://github.com/gearboxworks/gearbox.github.io/raw/master/Gearbox-100x.png)
+![Gearbox](https://raw.githubusercontent.com/gearboxworks/gearboxworks.github.io/master/assets/images/gearbox-logo.png)
 
 
-# Another [Gearbox](https://github.com/gearboxworks/) Docker container service - proxy
-This is the repository for the [proxy](<no value>) Docker container implemented for [Gearbox](https://github.com/gearboxworks/).
+# proxy Docker container service for [Gearbox](https://github.com/gearboxworks/)
+This is the repository for the [proxy](unknown) Docker container implemented for [Gearbox](https://github.com/gearboxworks/).
 
 
 ## Repository Info
@@ -12,13 +12,12 @@ GitHub release(latest): ![last-release-date](https://img.shields.io/github/relea
 
 
 ## Supported versions and respective Dockerfiles
-| Service | GitHub Version | Docker Version | Docker Size | Docker Tags | Dockerfile |
-| ------- | -------------- | -------------- | ----------- | ----------- | ---------- |
-| proxy | ![proxy](https://img.shields.io/badge/proxy-1.12.2-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.12.2) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.12.2) | `1.12.2`, `1.12` | _([1.12.2/DockerfileRuntime](https://github.com/gearboxworks/docker-proxy/blob/master/1.12/DockerfileRuntime))_ |
-| proxy | ![proxy](https://img.shields.io/badge/proxy-1.13.12-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.13.12) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.13.12) | `1.13.12`, `1.13` | _([1.13.12/DockerfileRuntime](https://github.com/gearboxworks/docker-proxy/blob/master/1.13/DockerfileRuntime))_ |
-| proxy | ![proxy](https://img.shields.io/badge/proxy-1.14.2-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.14.2) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.14.2) | `1.14.2`, `1.14` | _([1.14.2/DockerfileRuntime](https://github.com/gearboxworks/docker-proxy/blob/master/1.14/DockerfileRuntime))_ |
-| proxy | ![proxy](https://img.shields.io/badge/proxy-1.15.9-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.15.9) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.15.9) | `1.15.9`, `1.15`, `latest` | _([1.15.9/DockerfileRuntime](https://github.com/gearboxworks/docker-proxy/blob/master/1.15/DockerfileRuntime))_ |
-
+| Service | GitHub Version | Docker Version | Docker Size | Docker Tags |
+| ------- | -------------- | -------------- | ----------- | ----------- |
+| [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.12.2-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.12.2) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.12.2) | _([`1.12.2`, `1.12`](https://github.com/gearboxworks/docker-proxy/blob/master/1.12/DockerfileRuntime))_ |
+| [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.13.12-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.13.12) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.13.12) | _([`1.13.12`, `1.13`](https://github.com/gearboxworks/docker-proxy/blob/master/1.13/DockerfileRuntime))_ |
+| [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.14.2-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.14.2) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.14.2) | _([`1.14.2`, `1.14`](https://github.com/gearboxworks/docker-proxy/blob/master/1.14/DockerfileRuntime))_ |
+| [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.15.9-green.svg) | ![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.15.9) | ![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.15.9) | _([`1.15.9`, `1.15`, `latest`](https://github.com/gearboxworks/docker-proxy/blob/master/1.15/DockerfileRuntime))_ |
 
 
 ## Using this container.
@@ -45,7 +44,7 @@ Simply clone this repository to your local machine
 `make push` - Push already built Docker images to Docker Hub, (only for Gearbox admins). Push all versions from the base directory or specific versions from each directory.
 
 ### Runtime from GitHub repo
-When you `cd` into a version directory you can also perform a few more actions.
+You can either build your container as above, or use it from DockerHub with these commands:
 
 `make start` - Spin up a Docker container with the correct runtime configs.
 
