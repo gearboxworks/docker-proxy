@@ -1,4 +1,4 @@
-![Gearbox](https://raw.githubusercontent.com/gearboxworks/gearboxworks.github.io/master/assets/images/gearbox-logo.png)
+![Gearbox](https://gearboxworks.github.io/assets/images/gearbox-logo.png)
 
 
 # proxy Docker container service for [Gearbox](https://github.com/gearboxworks/)
@@ -68,9 +68,9 @@ Create, and start the proxy Gearbox container. Run a shell.
 
 `./bin/gb-launch -gb-name proxy -gb-shell`
 
-Create, and start the proxy Gearbox container with version 1.12.2 and run a shell.
+Create, and start the proxy Gearbox container with version  and run a shell.
 
-`./bin/gb-launch -gb-name proxy -gb-version 1.12.2 -gb-shell`
+`./bin/gb-launch -gb-name proxy -gb-version  -gb-shell`
 
 If proxy is symlinked to `gb-launch`, then you can drop the `-gb-name` flag.
 
@@ -80,18 +80,18 @@ Running proxy Gearbox container default command. If a container has a default in
 
 `./bin/proxy -flag1 -flag2 variable`
 
-`./bin/gb-launch -gb-name proxy -gb-version 1.12.2 -flag1 -flag2 variable`
+`./bin/gb-launch -gb-name proxy -gb-version  -flag1 -flag2 variable`
 
 
 Running alternate commands within the proxy Gearbox container.
 
 `./bin/proxy -gb-shell -- ls -l`
 
-`./bin/gb-launch -gb-name proxy -gb-version 1.12.2 -gb-shell -- ls -l`
+`./bin/gb-launch -gb-name proxy -gb-version  -gb-shell -- ls -l`
 
 `./bin/proxy -gb-shell -- ps -eaf`
 
-`./bin/gb-launch -gb-name proxy -gb-version 1.12.2 -gb-shell -- ps -eaf`
+`./bin/gb-launch -gb-name proxy -gb-version  -gb-shell -- ps -eaf`
 
 
 ssh - All [Gearbox](https://github.com/gearboxworks/) containers have a running SSH daemon. So you can connect remotely.
