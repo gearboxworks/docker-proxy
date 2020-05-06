@@ -1,0 +1,84 @@
+
+################################################################################
+# WARNING: This file has been auto-generated. DO NOT EDIT: WARNING
+# Created on 2020-05-06T20:57:32+1000, using template:DockerfileRuntime.tmpl and json:gearbox.json
+# Referenced Docker container for docker-proxy based off gearboxworks/gearbox-base:alpine-3.9 with nginx:1.15.12-alpine overlayed.
+
+ARG VERSION=1.15.12
+
+# 1. First reference the gearbox-base image.
+FROM gearboxworks/gearbox-base:alpine-3.9 as gearbox-base
+
+# 2. Next reference the third party image.
+FROM nginx:1.15.12-alpine
+ARG VERSION
+ARG GEARBOX_ENTRYPOINT
+ARG GEARBOX_ENTRYPOINT_ARGS
+USER root
+
+# 3. Copy the build directory over from gearbox-base image.
+COPY --from=gearbox-base /etc/gearbox /etc/gearbox
+
+# 4. Set up env variables.
+MAINTAINER Gearbox Team <team@gearbox.works>
+ENV GEARBOX_CONTAINER_NAME "docker-proxy"
+ENV GEARBOX_CONTAINER_VERSION ${VERSION}
+ENV GEARBOX_ENTRYPOINT ${GEARBOX_ENTRYPOINT}
+ENV GEARBOX_ENTRYPOINT_ARGS ${GEARBOX_ENTRYPOINT_ARGS}
+LABEL gearbox.json='{"schema": "gear-1","meta": {"state": "production","organization": "gearboxworks","name": "proxy","label": "Proxy","maintainer": "Gearbox Team <team@gearbox.works>","class": "webserver","refurl": "unknown"},"build": {"ports": {"http": "80","https": "443"},"run": "/usr/sbin/nginx","args": "","env": {},"network": "--network gearboxnet","volumes": "","restart": "--restart no"},"run": {"commands": {"default": ""}},"project": {},"extensions": {},"versions": {"1.10.3": {"majorversion": "1.10","latest": false,"ref": "nginx:1.10.3-alpine","base": "gearboxworks/gearbox-base:alpine-3.5"},"1.11.13": {"majorversion": "1.11","latest": false,"ref": "nginx:1.11.13-alpine","base": "gearboxworks/gearbox-base:alpine-3.5"},"1.12.2": {"majorversion": "1.12","latest": false,"ref": "nginx:1.12.2-alpine","base": "gearboxworks/gearbox-base:alpine-3.5"},"1.13.12": {"majorversion": "1.13","latest": false,"ref": "nginx:1.13.12-alpine","base": "gearboxworks/gearbox-base:alpine-3.7"},"1.14.2": {"majorversion": "1.14","latest": false,"ref": "nginx:1.14.2-alpine","base": "gearboxworks/gearbox-base:alpine-3.8"},"1.15.12": {"majorversion": "1.15","latest": false,"ref": "nginx:1.15.12-alpine","base": "gearboxworks/gearbox-base:alpine-3.9"},"1.16.1": {"majorversion": "1.16","latest": false,"ref": "nginx:1.16.1-alpine","base": "gearboxworks/gearbox-base:alpine-3.10"},"1.17.10": {"majorversion": "1.17","latest": false,"ref": "nginx:1.17.10-alpine","base": "gearboxworks/gearbox-base:alpine-3.11"},"1.18.0": {"majorversion": "1.18","latest": true,"ref": "nginx:1.18.0-alpine","base": "gearboxworks/gearbox-base:alpine-3.11"}}}'
+LABEL gearbox.version='1.15.12'
+ENV GEARBOX_VERSION "1.15.12"
+LABEL container.class="webserver"
+ENV GEARBOX_CLASS "webserver"
+LABEL container.label="Proxy"
+ENV GEARBOX_LABEL "Proxy"
+LABEL container.maintainer="Gearbox Team <team@gearbox.works>"
+ENV GEARBOX_MAINTAINER "Gearbox Team <team@gearbox.works>"
+LABEL container.name="proxy"
+ENV GEARBOX_NAME "proxy"
+LABEL container.organization="gearboxworks"
+ENV GEARBOX_ORGANIZATION "gearboxworks"
+LABEL container.refurl="unknown"
+ENV GEARBOX_REFURL "unknown"
+LABEL container.state="production"
+ENV GEARBOX_STATE "production"
+LABEL container.args=""
+ENV GEARBOX_ARGS ""
+# SKIP env
+LABEL container.network="--network gearboxnet"
+ENV GEARBOX_NETWORK "--network gearboxnet"
+LABEL container.ports="map[http:80 https:443]"
+ENV GEARBOX_PORTS "map[http:80 https:443]"
+LABEL container.restart="--restart no"
+ENV GEARBOX_RESTART "--restart no"
+LABEL container.run="/usr/sbin/nginx"
+ENV GEARBOX_RUN "/usr/sbin/nginx"
+LABEL container.volumes=""
+ENV GEARBOX_VOLUMES ""
+LABEL container.base="gearboxworks/gearbox-base:alpine-3.9"
+ENV GEARBOX_BASE "gearboxworks/gearbox-base:alpine-3.9"
+LABEL container.latest="false"
+ENV GEARBOX_LATEST "false"
+LABEL container.majorversion="1.15"
+ENV GEARBOX_MAJORVERSION "1.15"
+LABEL container.ref="nginx:1.15.12-alpine"
+ENV GEARBOX_REF "nginx:1.15.12-alpine"
+
+# 5. Now copy the local files specific to this container.
+COPY build /etc/gearbox
+COPY versions/${VERSION}/build /etc/gearbox
+
+# 6. Run the base.sh script to set everything up.
+RUN /bin/sh /etc/gearbox/build/base.sh
+
+# 7. Run the proxy.sh script to set everything up.
+RUN /bin/sh /etc/gearbox/build/proxy.sh
+
+# 8. Expose ports.
+EXPOSE 22 9970 80 443 
+WORKDIR /home/gearbox/projects
+
+CMD ["/init"]
+
+# END
+################################################################################
