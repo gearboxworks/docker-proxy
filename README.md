@@ -14,10 +14,15 @@ GitHub release(latest): ![last-release-date](https://img.shields.io/github/relea
 ## Supported versions and respective Dockerfiles
 | Service | GitHub Version | Docker Version | Docker Size | Docker Tags |
 | ------- | -------------- | -------------- | ----------- | ----------- |
+| [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.10.3-green.svg) | [![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.10.3)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | [![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.10.3)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | _([`1.10.3`, `1.10`](https://github.com/gearboxworks/docker-proxy/blob/master/versions/1.10.3/DockerfileRuntime))_ |
+| [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.11.13-green.svg) | [![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.11.13)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | [![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.11.13)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | _([`1.11.13`, `1.11`](https://github.com/gearboxworks/docker-proxy/blob/master/versions/1.11.13/DockerfileRuntime))_ |
 | [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.12.2-green.svg) | [![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.12.2)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | [![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.12.2)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | _([`1.12.2`, `1.12`](https://github.com/gearboxworks/docker-proxy/blob/master/versions/1.12.2/DockerfileRuntime))_ |
 | [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.13.12-green.svg) | [![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.13.12)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | [![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.13.12)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | _([`1.13.12`, `1.13`](https://github.com/gearboxworks/docker-proxy/blob/master/versions/1.13.12/DockerfileRuntime))_ |
 | [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.14.2-green.svg) | [![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.14.2)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | [![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.14.2)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | _([`1.14.2`, `1.14`](https://github.com/gearboxworks/docker-proxy/blob/master/versions/1.14.2/DockerfileRuntime))_ |
-| [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.15.9-green.svg) | [![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.15.9)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | [![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.15.9)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | _([`1.15.9`, `1.15`, `latest`](https://github.com/gearboxworks/docker-proxy/blob/master/versions/1.15.9/DockerfileRuntime))_ |
+| [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.15.12-green.svg) | [![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.15.12)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | [![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.15.12)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | _([`1.15.12`, `1.15`](https://github.com/gearboxworks/docker-proxy/blob/master/versions/1.15.12/DockerfileRuntime))_ |
+| [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.16.1-green.svg) | [![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.16.1)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | [![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.16.1)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | _([`1.16.1`, `1.16`](https://github.com/gearboxworks/docker-proxy/blob/master/versions/1.16.1/DockerfileRuntime))_ |
+| [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.17.10-green.svg) | [![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.17.10)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | [![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.17.10)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | _([`1.17.10`, `1.17`](https://github.com/gearboxworks/docker-proxy/blob/master/versions/1.17.10/DockerfileRuntime))_ |
+| [proxy](unknown) | ![proxy](https://img.shields.io/badge/proxy-1.18.0-green.svg) | [![Docker Version)](https://img.shields.io/docker/v/gearboxworks/proxy/1.18.0)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | [![Docker Size](https://img.shields.io/docker/image-size/gearboxworks/proxy/1.18.0)](https://hub.docker.com/repository/docker/gearboxworks/proxy) | _([`1.18.0`, `1.18`, `latest`](https://github.com/gearboxworks/docker-proxy/blob/master/versions/1.18.0/DockerfileRuntime))_ |
 
 
 ## About this container.
@@ -34,8 +39,8 @@ However, due to the flexability of Gearbox, it can be used outside of this frame
 
 There are three methods:
 
-## Method 1: Using gb-launch
-`gb-launch` is a tool specifically designed to interact with a Gearbox Docker container.
+## Method 1: Using launch
+`launch` is a tool specifically designed to interact with a Gearbox Docker container.
 
 It provides three important functional areas, without any Docker container learning curve:
 - Allows control over Gearbox Docker containers: stop, start, create, remove.
@@ -44,60 +49,63 @@ It provides three important functional areas, without any Docker container learn
 
 It also provides a functional SSH daemon for connecting remotely as well as a standard set of common tools and utilities.
 
+Further `launch` documentation can be [found here](https://github.com/gearboxworks/docker-template/blob/master/LAUNCH.md).
 
-### Setup from GitHub repo
-`gb-launch` is currently in beta testing and is included along with all Gearbox Docker repos.
+### Download launch
+`launch` is currently in beta testing and is included along with all Gearbox Docker repos.
 Once out of beta, it will be included within the Gearbox installation package.
 
-For now, simply clone this repository to your local machine.
+For now, simply download the standalone `launch` binary for your O/S.
+- [Mac OSX 64bit](https://github.com/gearboxworks/docker-template/raw/master/bin/Darwin/launch)
+- [Linux 64bit](https://github.com/gearboxworks/docker-template/raw/master/bin/Linux/launch)
+- [Windows 64bit](https://github.com/gearboxworks/docker-template/raw/master/bin/Windows/launch)
 
-`git clone https://github.com/gearboxworks/docker-proxy.git`
 
-### Running gb-launch
-There are many ways to call gb-launch, either directly or indirectly.
+### Running launch
+There are many ways to call launch, either directly or indirectly.
 Additionally, all host environment variables will be imported into the container seamlessly.
 This allows a devloper to try multiple versions of software as though they were installed locally.
 
 If a container is missing, it will be downloaded and created. Multiple versions can co-exist.
 
-Create, and start the proxy Gearbox container.
+Install, create, and start the proxy Gearbox container.
 
-`./bin/gb-launch -gb-name proxy`
+`./launch install proxy`
 
 Create, and start the proxy Gearbox container. Run a shell.
 
-`./bin/gb-launch -gb-name proxy -gb-shell`
+`./launch shell proxy`
 
-Create, and start the proxy Gearbox container with version  and run a shell.
+Create, and start the proxy Gearbox container with version 1.10.3 and run a shell.
 
-`./bin/gb-launch -gb-name proxy -gb-version  -gb-shell`
+`./launch shell proxy:1.10.3`
 
-If proxy is symlinked to `gb-launch`, then you can drop the `-gb-name` flag.
+`./launch shell proxy:1.10.3 ls -l`
 
-`./bin/proxy`
+`./launch shell proxy:1.10.3 ps -eaf`
+
+
+### Available commands
+If proxy is symlinked to `launch`, then the Gearbox container will be determined automatically and the default command will be run.
+All available commands for a Gearbox container will be automatically symlinked upon installation.
+
+`./proxy`
 
 Running proxy Gearbox container default command. If a container has a default interactive command, arguments can be supplied without specifying that command.
 
-`./bin/proxy -flag1 -flag2 variable`
+`./proxy -flag1 -flag2 variable`
 
-`./bin/gb-launch -gb-name proxy -gb-version  -flag1 -flag2 variable`
+`./launch proxy:1.10.3 -flag1 -flag2 variable`
 
-
-Running alternate commands within the proxy Gearbox container.
-
-`./bin/proxy -gb-shell -- ls -l`
-
-`./bin/gb-launch -gb-name proxy -gb-version  -gb-shell -- ls -l`
-
-`./bin/proxy -gb-shell -- ps -eaf`
-
-`./bin/gb-launch -gb-name proxy -gb-version  -gb-shell -- ps -eaf`
+Gearbox containers may have multiple executables that can be run. The proxy Gearbox container has the following available commands:
+- The default command will execute `` within the container.
 
 
+### Remote connection
 ssh - All [Gearbox](https://github.com/gearboxworks/) containers have a running SSH daemon. So you can connect remotely.
-To show what ports are exported to the host.
+To show what ports are exported to the host, use the following command.
 
-`./bin/gb-launch -gb-name proxy -gb-list`
+`./launch list proxy`
 
 
 ## Method 2: GitHub repo
@@ -165,7 +173,7 @@ shell - Run a shell, (/bin/bash), within a Docker container.
 ### SSH
 ssh - All [Gearbox](https://github.com/gearboxworks/) containers have a running SSH daemon. So you can connect remotely.
 
-Either use `gb-launch` above or discover the port and SSH directly.
+Either use `launch` above or discover the port and SSH directly.
 
 
 ```

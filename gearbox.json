@@ -25,12 +25,27 @@
 		"restart": "--restart no"
 	},
 	"run": {
+		"commands": {
+			"default": ""
+		}
 	},
 	"project": {
 	},
 	"extensions": {
 	},
 	"versions": {
+		"1.10.3": {
+			"majorversion": "1.10",
+			"latest": false,
+			"ref": "nginx:1.10.3-alpine",
+			"base": "gearboxworks/gearbox-base:alpine-3.5"
+		},
+		"1.11.13": {
+			"majorversion": "1.11",
+			"latest": false,
+			"ref": "nginx:1.11.13-alpine",
+			"base": "gearboxworks/gearbox-base:alpine-3.5"
+		},
 		"1.12.2": {
 			"majorversion": "1.12",
 			"latest": false,
@@ -49,12 +64,29 @@
 			"ref": "nginx:1.14.2-alpine",
 			"base": "gearboxworks/gearbox-base:alpine-3.8"
 		},
-		"1.15.9": {
+		"1.15.12": {
 			"majorversion": "1.15",
-			"latest": true,
-			"ref": "nginx:1.15.9-alpine",
+			"latest": false,
+			"ref": "nginx:1.15.12-alpine",
 			"base": "gearboxworks/gearbox-base:alpine-3.9"
 		},
-		"": {}
+		"1.16.1": {
+			"majorversion": "1.16",
+			"latest": false,
+			"ref": "nginx:1.16.1-alpine",
+			"base": "gearboxworks/gearbox-base:alpine-3.10"
+		},
+		"1.17.10": {
+			"majorversion": "1.17",
+			"latest": false,
+			"ref": "nginx:1.17.10-alpine",
+			"base": "gearboxworks/gearbox-base:alpine-3.11"
+		},
+		"1.18.0": {
+			"majorversion": "1.18",
+			"latest": true,
+			"ref": "nginx:1.18.0-alpine",
+			"base": "gearboxworks/gearbox-base:alpine-3.11"
+		}
 	}
 }
