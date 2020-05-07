@@ -76,13 +76,13 @@ Create, and start the proxy Gearbox container. Run a shell.
 
 `./launch shell proxy`
 
-Create, and start the proxy Gearbox container with version 1.15.12 and run a shell.
+Create, and start the proxy Gearbox container with version 1.11.13 and run a shell.
 
-`./launch shell proxy:1.15.12`
+`./launch shell proxy:1.11.13`
 
-`./launch shell proxy:1.15.12 ls -l`
+`./launch shell proxy:1.11.13 ls -l`
 
-`./launch shell proxy:1.15.12 ps -eaf`
+`./launch shell proxy:1.11.13 ps -eaf`
 
 
 ### Available commands
@@ -95,7 +95,7 @@ Running proxy Gearbox container default command. If a container has a default in
 
 `./proxy -flag1 -flag2 variable`
 
-`./launch proxy:1.15.12 -flag1 -flag2 variable`
+`./launch proxy:1.11.13 -flag1 -flag2 variable`
 
 Gearbox containers may have multiple executables that can be run. The proxy Gearbox container has the following available commands:
 - The default command will execute `` within the container.
