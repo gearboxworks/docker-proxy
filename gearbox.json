@@ -7,7 +7,7 @@
 		"label": "Proxy",
 		"maintainer": "Gearbox Team <team@gearbox.works>",
 		"class": "webserver",
-		"refurl": "unknown"
+		"refurl": "https://www.nginx.com/"
 	},
 	"build": {
 		"ports": {
